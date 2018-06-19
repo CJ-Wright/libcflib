@@ -60,7 +60,7 @@ class DB:
         All rights reserved.
         """
         with self.idx.searcher() as searcher:
-            results = searcher.search()
+            results = searcher.search(**kwargs)
             for result in results:
                 if result not in self.cache:
                     data = self.get_data(result)
